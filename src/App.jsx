@@ -1,11 +1,9 @@
-function App() {
+export default function App() {
   return (
     <div className="mx-auto lg:max-w-7xl">
       <main>
-        <h1 className="text-3xl">Pomotask</h1>
+        <h1 className="text-5xl text-center">Pomotask</h1>
       </main>
     </div>
   );
 }
-
-export default App;
