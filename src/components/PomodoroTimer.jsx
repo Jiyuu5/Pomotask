@@ -1,7 +1,11 @@
 export default function PomodoroTimer() {
   return (
-    <div id="container" className="mx-auto w-2/3 border-2">
-      <div id="header"></div>
+    <div className="mx-auto w-1/2 border-4 rounded-lg py-2 px-2">
+      <div id="menuBar">x</div>
+      <div id="timerDisplay">
+        <p>00:00</p>
+      </div>
+      <div id="timerControls">play</div>
     </div>
   );
 }

@@ -4,9 +4,11 @@ import PomodoroTimer from "./PomodoroTimer";
 
 export default function App() {
   return (
-    <main className="mx-auto lg:max-w-7xl">
+    <main className="mx-auto h-full lg:max-w-7xl flex flex-col">
       <Header />
-      <PomodoroTimer />
+      <div id="containerTimer" className="basis-full mt-8">
+        <PomodoroTimer />
+      </div>
       <Footer />
     </main>
   );
