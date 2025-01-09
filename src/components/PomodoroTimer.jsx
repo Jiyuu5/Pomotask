@@ -1,7 +1,12 @@
+import { useState } from "react";
+
 export default function PomodoroTimer() {
+  const [minutesWork, setMinutesWork] = useState(25);
+  const [secondsWork, setSecondsWork] = useState(0);
+
   return (
     <div className="mx-auto w-2/5 py-2 px-2 bg-blue-600 border-4 border-white border-opacity-80 rounded-lg">
-      <div id="timerMenuBar" className="mb-4">
+      <div id="timerMenuBar" className="mb-6">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -23,9 +28,11 @@ export default function PomodoroTimer() {
         </svg>
       </div>
       <div id="timerDisplay">
-        <p className="text-8xl text-center font-bold">25:00</p>
+        <p className="text-8xl text-center font-bold">
+          {minutesWork}:{secondsWork}
+        </p>
       </div>
-      <div id="timerControls" className="mt-4 mb-2 flex justify-center gap-5 ">
+      <div id="timerControls" className="mt-8 mb-2 flex justify-center gap-5 ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
