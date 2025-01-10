@@ -7,7 +7,7 @@ import TaskList from "./TaskList";
 export default function App() {
   const [currentTaskStart, setCurrentTastStart] = useState(null);
   const [currentTaskEnd, setCurrentTaskEnd] = useState(null);
-  const [currentTaskList, setCurrentTaskList] = useState([]);
+  const [taskList, setTaskList] = useState([]);
 
   return (
     <main className="mx-auto h-full lg:max-w-7xl flex flex-col">
