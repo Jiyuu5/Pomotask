@@ -2,7 +2,8 @@ import { useState } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import PomodoroTimer from "./PomodoroTimer";
-import TaskList from "./TaskList";
+import TaskListContainer from "./TaskListContainer";
+import CurrentTask from "./CurrentTask";
 
 export default function App() {
   const [currentTaskStart, setCurrentTastStart] = useState(null);
@@ -14,7 +15,8 @@ export default function App() {
       <Header />
       <div id="containerTimer" className="basis-full mt-8">
         <PomodoroTimer />
-        <TaskList />
+        <CurrentTask />
+        <TaskListContainer />
       </div>
       <Footer />
     </main>
