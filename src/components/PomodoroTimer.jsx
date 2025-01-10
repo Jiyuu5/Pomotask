@@ -2,13 +2,37 @@ import { useState } from "react";
 
 export default function PomodoroTimer() {
   const [currentTimer, setCurrentTimer] = useState(605);
-  const [workTimer, setWorkTimer] = useState(1500);
+  const [workTimer, setWorkTimer] = useState(1501);
+  const [isRunning, setIsRunning] = useState(false);
 
-  const minutes = Math.round(currentTimer / 60);
+  const minutes = Math.floor(currentTimer / 60);
   const seconds = currentTimer % 60;
+  let interval;
 
+  // resets the timer to the current setting in the options menu
   function resetTimer() {
+    stopTimer();
     setCurrentTimer(workTimer);
+  }
+
+  function startTimer() {
+    const startTime = Date.now();
+
+    if (currentTimer > 0 && !isRunning && !interval) {
+      setIsRunning(true);
+      interval = setInterval(function () {
+        let elapsedTime = Date.now() - startTime;
+        setCurrentTimer(currentTimer - Math.round(elapsedTime / 1000));
+      }, 100);
+    }
+  }
+
+  function stopTimer() {
+    setIsRunning(false);
+    if (interval) {
+      clearInterval(interval);
+      interval = null;
+    }
   }
 
   return (
@@ -56,6 +80,7 @@ export default function PomodoroTimer() {
           />
         </svg>
         <svg
+          onClick={startTimer}
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -70,6 +95,7 @@ export default function PomodoroTimer() {
           />
         </svg>
         <svg
+          onClick={stopTimer}
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
