@@ -3,6 +3,7 @@ import { useState } from "react";
 export default function PomodoroTimer() {
   const [currentTimer, setCurrentTimer] = useState(605);
   const [workTimer, setWorkTimer] = useState(1500);
+  const [pauseTimer, setPauseTimer] = useState(300);
   const [isRunning, setIsRunning] = useState(false);
 
   const minutes = Math.floor(currentTimer / 60);
